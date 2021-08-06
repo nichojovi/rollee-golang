@@ -1,5 +1,5 @@
 package entity
 
 type Fibonacci struct {
-	N int `json:"n"`
+	N int64 `json:"n"`
 }

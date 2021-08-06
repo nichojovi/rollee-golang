@@ -1,12 +1,17 @@
 package service
 
-func Fibonacci(n int) int {
-	if n <= 1 {
+func (fs *fibonacciService) GetFibonacci(n int64) int64 {
+	var i, first, second int64
+
+	if n < 2 {
 		return n
 	}
-	return Fibonacci(n-1) + Fibonacci(n-2)
-}
 
-func (fs *fibonacciService) GetFibonacci(n int) int {
-	return Fibonacci(n)
+	first, second = 0, 1
+	for i = 2; i < n; i++ {
+		tmp := first + second
+		first = second
+		second = tmp
+	}
+	return first + second
 }

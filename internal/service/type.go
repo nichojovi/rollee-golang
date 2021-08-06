@@ -29,6 +29,6 @@ type (
 	}
 
 	FibonacciService interface {
-		GetFibonacci(n int) int
+		GetFibonacci(n int64) int64
 	}
 )
